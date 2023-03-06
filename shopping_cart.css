@@ -1,0 +1,26 @@
+  .grid-container {
+    display: grid;
+    grid-template-columns: 430px 1fr;
+    grid-gap: 5px;
+}
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-gap: 5px;
+}
+.hr.new4 {
+  border: 5px solid lightblue;
+}
+
+.cart-container table{
+  border-collapse: collapse;
+  width=100%;
+  table-layout: fixed;
+
+}
+
+
+.cart-container table thead th{
+  border: none;
+  padding: 6px 0;
+}

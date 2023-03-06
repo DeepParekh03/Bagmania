@@ -1,0 +1,370 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashion | Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body class="full-wrapper">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area ">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                        <div class="header-left d-flex align-items-center">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="trial.html"><img src="assets/img/logo/cover.png" alt=""height="90" widht="230"></a>
+                            </div>
+                            <!-- Main-menu -->
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="trial.html">Home</a></li> 
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>   
+                        </div>
+                        <div class="header-right1 d-flex align-items-center">
+                            <!-- Social -->
+                            <div class="header-social d-none d-md-block">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                            <!-- Search Box -->
+                            <div class="search d-none d-md-block">
+                                <ul class="d-flex align-items-center">
+                                    
+                                    </li>
+                                    <li>
+                                        <div class="card-stor">
+                                            <img src="assets/img/gallery/card.svg" alt="">
+                                            <span>0</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <!-- header end -->
+    <main>
+        <!-- breadcrumb Start-->
+        <div class="page-notification">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="trial.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Shop</a></li> 
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- listing Area Start -->
+        <div class="category-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-8 col-md-10">
+                        <div class="section-tittle mb-50">
+                            <h2>Shop with us</h2>
+                            <p>Laptop Bags</p>  
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="container py-5">
+                            <div class="row mt-4">
+                            <?php
+                           
+                                $servername = "localhost";
+                                $username = "root"; // username
+                                $password = ""; // password
+                                $database="bagmania";
+                                // Create connection
+                                $conn = new mysqli($servername, $username, $password,$database);
+                                    // Check connection
+                                if ($conn->connect_error)  //if (!$conn) {}
+                                {
+                                  die("Connection failed: " . $conn->connect_error);
+                                }
+                                
+                                /*$conn->close();
+                                // OR mysqli_close($conn);*/
+
+
+                            $query = "select * from laptop";
+                            $query_run=mysqli_query($conn,$query);
+                            $check_clutches=mysqli_num_rows($query_run)>0;
+                            if($check_clutches)
+                            {
+                                while($row=mysqli_fetch_assoc($query_run)){
+                                    ?>
+                                    <div class="col-md-4 mt-2">
+                                        <div class="card"  >
+                                            
+                                         <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['img'] ).'"alt="laptop images" style="width:260px; height:230px;">';?>
+                                         <div class="card-body" align-self="normal">
+                                        
+                                            <h2 class="card-title"><?php echo $row['head'];?></h2>
+                                            <p class="card-text">
+                                                <?php echo $row['description'];?>
+                                            </p>
+                                        <h4 class="card-title"><?php echo "Rs.".$row['Price'];?></h4>
+                                            <button class="btm-btn-success" style='background-color: green;'>View Details</button>
+                                         </div>
+                                        </div>
+                                    </div>  
+                        
+                            <?php 
+                                }
+                            }
+                            else{
+                                echo 'No results';
+                            }
+                            ?>
+                          </div>
+                    </div>
+
+
+                    </div>
+</div>
+</div>
+</div>
+<!-- listing-area Area End -->
+
+<!--? Services Area Start -->
+<div class="categories-area section-padding40 gray-bg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat mb-50">
+                    <div class="cat-icon">
+                        <img src="assets/img/icon/services1.jpg"  height="100" ,width="100">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat mb-50">
+                    <div class="cat-icon">
+                        <img src="assets/img/icon/services2.jpg"  height="100" ,width="100">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat mb-30">
+                    <div class="cat-icon">
+                        <img src="assets/img/icon/services3.jpg"  height="100" ,width="100">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="assets/img/icon/services4.jpg"  height="100" ,width="100">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--? Services Area End -->
+</main>
+
+<footer>
+    <!-- Footer Start-->
+    <div class="footer-area footer-padding">
+        <div class="container-fluid ">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-8 col-sm-8">
+                 <div class="single-footer-caption mb-50">
+                   <div class="single-footer-caption mb-30">
+                      <!-- logo -->
+                      <div class="footer-logo mb-35">
+                       <a href="trial.html"><h1 style="color:white">Bagestine</h1></a>
+                   </div>
+                   <div class="footer-tittle">
+                       <div class="footer-pera">
+                           <p>Welcome to the land of finest bag collections at minimal cost</p>
+                       </div>
+                   </div>
+                   <!-- social -->
+                   <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle">
+                <h4>Partners</h4>
+                <ul>
+                    <li><a href="#">Amazon</a></li>
+                    <li><a href="#">FlipKart</a></li>
+                    <li><a href="#">Tata cliq</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li><a href="#">9312345667</a></li>
+                    <li><a href="#">bagestine.com</a></li>
+                    <li><a href="#">67/A, Colorlib, Green road, NYC</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- footer-bottom area -->
+<div class="footer-bottom-area">
+    <div class="container">
+        <div class="footer-border">
+           <div class="row d-flex align-items-center">
+               <div class="col-xl-12 ">
+                   <div class="footer-copy-right text-center">
+                       <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Deep Parekh</a>
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer End-->
+</footer>
+<!--? Search model Begin -->
+<div class="search-model-box">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-btn">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Searching key.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+<!-- Jquery, Popper, Bootstrap -->
+<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./assets/js/popper.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+
+<!-- Slick-slider , Owl-Carousel ,slick-nav -->
+<script src="./assets/js/owl.carousel.min.js"></script>
+<script src="./assets/js/slick.min.js"></script>
+<script src="./assets/js/jquery.slicknav.min.js"></script>
+
+<!-- One Page, Animated-HeadLin, Date Picker -->
+<script src="./assets/js/wow.min.js"></script>
+<script src="./assets/js/animated.headline.js"></script>
+<script src="./assets/js/jquery.magnific-popup.js"></script>
+<script src="./assets/js/gijgo.min.js"></script>
+
+<!-- Nice-select, sticky,Progress -->
+<script src="./assets/js/jquery.nice-select.min.js"></script>
+<script src="./assets/js/jquery.sticky.js"></script>
+<script src="./assets/js/jquery.barfiller.js"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="./assets/js/jquery.counterup.min.js"></script>
+<script src="./assets/js/waypoints.min.js"></script>
+<script src="./assets/js/jquery.countdown.min.js"></script>
+<script src="./assets/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="./assets/js/contact.js"></script>
+<script src="./assets/js/jquery.form.js"></script>
+<script src="./assets/js/jquery.validate.min.js"></script>
+<script src="./assets/js/mail-script.js"></script>
+<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->    
+<script src="./assets/js/plugins.js"></script>
+<script src="./assets/js/main.js"></script>
+
+</body>
+</html>
+                </body>
+</html>

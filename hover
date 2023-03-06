@@ -1,0 +1,34 @@
+
+<html>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.outer{
+    position: relative;
+
+}
+.outer img,.inner img{
+    width: 100%;
+}
+.inner{
+    position: absolute;
+    top: 140px;
+    display: none ;   
+
+}
+.outer:hover .inner{
+    display: block;
+}
+</style>
+<body>
+ <div class="outer">
+ 	<img src="assets/img/carosal/1.png"/>
+  </div>
+        <div class="inner">
+        <img src="assets/img/carosal/1.png"/>
+        </div>
+        </body>
+        </html>	
