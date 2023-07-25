@@ -1,6 +1,6 @@
 <?php
 session_start();
-$to = 'parekhdeep92@gmail.com';
+$to = 'email';
 $subject = $_REQUEST['subject'];
 $from = $_SESSION['email'];
  
